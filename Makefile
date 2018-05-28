@@ -11,7 +11,6 @@
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER_DIR = includes
 CFLAGS = -c -Wall -Wextra -Werror
 SRC = ft_memset.c \
 		ft_bzero.c \
@@ -69,6 +68,7 @@ SRC = ft_memset.c \
 		ft_lstdelone.c \
 		ft_lstdel.c \
 		ft_lstadd.c \
+		ft_lstadd_back.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_islower.c \
@@ -90,7 +90,7 @@ $(NAME): $(OBJ)
 	@echo "\033[32mBuilt library.\033[0m"
 
 .c.o:
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	/bin/rm -f $(OBJ)
