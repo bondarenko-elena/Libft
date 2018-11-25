@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   vector_op_divide.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 16:37:52 by olbondar          #+#    #+#             */
-/*   Updated: 2018/05/28 16:38:01 by olbondar         ###   ########.fr       */
+/*   Created: 2018/11/25 16:13:16 by olbondar          #+#    #+#             */
+/*   Updated: 2018/11/25 16:13:17 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+t_vector	*vector_op_divide(t_vector *v, double x)
 {
-	t_list	*lst;
+	t_vector *tmp;
 
-	lst = *alst;
-	if (*alst == NULL)
-		*alst = new;
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		lst->next = new;
-	}
+	tmp = NULL;
+	tmp->x = v->x / x;
+	tmp->y = v->y / x;
+	tmp->z = v->z / x;
+	return (tmp);
 }

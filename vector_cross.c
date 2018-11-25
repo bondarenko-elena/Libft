@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   vector_cross.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 16:37:52 by olbondar          #+#    #+#             */
-/*   Updated: 2018/05/28 16:38:01 by olbondar         ###   ########.fr       */
+/*   Created: 2018/11/25 16:14:29 by olbondar          #+#    #+#             */
+/*   Updated: 2018/11/25 16:14:30 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+t_vector	*vector_cross(t_vector *v1, t_vector *v2)
 {
-	t_list	*lst;
+	t_vector *tmp;
 
-	lst = *alst;
-	if (*alst == NULL)
-		*alst = new;
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		lst->next = new;
-	}
+	tmp = NULL;
+	tmp->x = v1->y * v2->z - v1->z * v2->y;
+	tmp->y = v1->z * v2->x - v1->x * v2->z;
+	tmp->z = v1->x * v2->y - v1->y * v2->x;
+	return (tmp);
 }

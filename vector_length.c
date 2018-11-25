@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   vector_length.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 16:37:52 by olbondar          #+#    #+#             */
-/*   Updated: 2018/05/28 16:38:01 by olbondar         ###   ########.fr       */
+/*   Created: 2018/11/25 16:13:55 by olbondar          #+#    #+#             */
+/*   Updated: 2018/11/25 16:13:57 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+double	vector_length(t_vector *v)
 {
-	t_list	*lst;
-
-	lst = *alst;
-	if (*alst == NULL)
-		*alst = new;
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		lst->next = new;
-	}
+	return (sqrt(v->x * v->x + v->y * v->y + v->z * v->z));
 }

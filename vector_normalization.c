@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   vector_normalization.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 16:37:52 by olbondar          #+#    #+#             */
-/*   Updated: 2018/05/28 16:38:01 by olbondar         ###   ########.fr       */
+/*   Created: 2018/11/25 16:08:40 by olbondar          #+#    #+#             */
+/*   Updated: 2018/11/25 16:08:47 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	vector_normalization(t_vector *v)
 {
-	t_list	*lst;
+	double	n;
 
-	lst = *alst;
-	if (*alst == NULL)
-		*alst = new;
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		lst->next = new;
-	}
+	n = 1.0 / sqrt((v->x * v->x) + (v->y * v->y) + (v->z * v->z));
+	v->x *= n;
+	v->y *= n;
+	v->z *= n;
 }
