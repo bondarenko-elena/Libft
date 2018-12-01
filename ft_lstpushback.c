@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_divide.c                                    :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olbondar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/25 16:14:17 by olbondar          #+#    #+#             */
-/*   Updated: 2018/12/01 15:47:17 by olbondar         ###   ########.fr       */
+/*   Created: 2018/12/01 15:43:10 by olbondar          #+#    #+#             */
+/*   Updated: 2018/12/01 15:43:18 by olbondar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vector	vector_divide(t_vector *v1, t_vector *v2)
+void	ft_lstpushback(t_list **blst, void const *content,
+		size_t content_size)
 {
-	t_vector	tmp;
+	t_list	*list;
 
-	tmp.x = v1->x / v2->x;
-	tmp.y = v1->y / v2->y;
-	tmp.z = v1->z / v2->z;
-	return (tmp);
+	list = *blst;
+	if (list)
+	{
+		while (list->next)
+			list = list->next;
+		list->next = ft_lstnew(content, content_size);
+	}
+	else
+		*blst = ft_lstnew(content, content_size);
 }

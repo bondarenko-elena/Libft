@@ -81,6 +81,8 @@ SRC = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		get_next_line.c \
+		ft_lstpushback.c \
+		ft_strconc.c \
 		vector_add.c \
 		vector_clamp.c \
 		vector_cross.c \

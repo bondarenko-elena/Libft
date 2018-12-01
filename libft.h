@@ -117,19 +117,22 @@ char					*ft_strtrim(char const *s);
 int						ft_tolower(int c);
 int						ft_toupper(int c);
 int						get_next_line(const int fd, char **line);
-t_vector				*vector_add(t_vector *v1, t_vector *v2);
+void					ft_lstpushback(t_list **blst, void const *content,
+												size_t content_size);
+char					*ft_strconc(char *str, char start, char end);
+t_vector				vector_add(t_vector *v1, t_vector *v2);
 void					vector_clamp(t_vector *v, double v1, double v2);
-t_vector				*vector_cross(t_vector *v1, t_vector *v2);
+t_vector				vector_cross(t_vector *v1, t_vector *v2);
 double					vector_distance(t_vector *v1, t_vector *v2);
-t_vector				*vector_divide(t_vector *v1, t_vector *v2);
+t_vector				vector_divide(t_vector *v1, t_vector *v2);
 double					vector_length(t_vector *v);
-t_vector				*vector_multiply(t_vector *v1, t_vector *v2);
+t_vector				vector_multiply(t_vector *v1, t_vector *v2);
 void					vector_normalization(t_vector *v);
-t_vector				*vector_op_add(t_vector *v, double x);
-t_vector				*vector_op_divide(t_vector *v, double x);
-t_vector				*vector_op_multiply(t_vector *a, double x);
-t_vector				*vector_reflect(t_vector *i, t_vector *n);
+t_vector				vector_op_add(t_vector *v, double x);
+t_vector				vector_op_divide(t_vector *v, double x);
+t_vector				vector_op_multiply(t_vector *a, double x);
+t_vector				vector_reflect(t_vector *i, t_vector *n);
 double					vector_scalar_multiply(t_vector *a, t_vector *b);
-t_vector				*vector_substract(t_vector *v1, t_vector *v2);
+t_vector				vector_substract(t_vector *v1, t_vector *v2);
 
 #endif
